@@ -1,0 +1,10 @@
+docker-compose up -d reverse-proxy
+
+localhost:8080
+localhost:8080/api/rawdata
+
+docker-compose up -d whoami
+
+curl -H Host:whoami.docker.localhost http://127.0.0.1
+
+docker-compose up -d --scale whoami=2
